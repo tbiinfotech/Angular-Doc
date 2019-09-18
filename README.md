@@ -1,11 +1,12 @@
 # Component Name:MenuComponent
 
+```
 Selector:app-menu
-
+```
 ## Configurations
 
 ```
-@Inpu	t activeItemColor:string - Active item  color
+@Input activeItemColor:string - Active item  color
 @Input itemColor:string - Item Default color
 @Input menubg:string - Background Color
 @Input file:string - File Name
