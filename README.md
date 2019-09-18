@@ -37,7 +37,7 @@ Selector:app-menu
 
 Create a navigation from routes or route defined file 
 
-#Examples
+## Examples
 
 ```
 <app-menu menubg="#e83e8c" disableItem="home" file="./assets/menu_config.json"></app-menu>
