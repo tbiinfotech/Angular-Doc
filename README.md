@@ -1,5 +1,3 @@
-# Angular-Doc
-
 ##Component Name:MenuComponent
 Selector:app-menu
 ##Configurations

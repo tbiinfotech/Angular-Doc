@@ -1,0 +1,29 @@
+<div class="container-fluid menuBar" *ngIf="menuitems && menuitems.length>0">
+  <div class="row">
+	<div class="col-12 padding-0">
+		<nav class="navbar navbar-expand-lg navbar-light" [ngStyle]="{'background':menubg?menubg:'#000'}">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <div *ngFor="let items of menuitems">
+				<li class="nav-item" *ngIf="(items.menu_child).length==0" [ngClass]="{'active':items.menu_link==activeRoute}">
+					<a class="nav-link" href={{items.menu_link}} [ngStyle]="{'color':items.menu_link==activeRoute?activeItemColor:itemColor}">{{items.menu_name}}</a>
+				</li>
+				<li class="nav-item dropdown" *ngIf="(items.menu_child).length>0" ngbDropdown>
+					<a class="nav-link dropdown-toggle" id="{{items.menu_name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+						{{items.menu_name}}
+					</a>
+					<div class="dropdown-menu" [ngStyle]="{'background':menubg?menubg:'#000'}" [attr.aria-labelledby]="items.menu_name" ngbDropdownMenu>
+						<a class="dropdown-item" *ngFor="let childitems of items.menu_child" href={{childitems.menu_link}} [ngStyle]="{'color':childitems.menu_link==activeRoute?activeItemColor:itemColor}">{{childitems.menu_name}}</a>
+					</div>
+				</li>
+			  </div>
+			</ul>
+		  </div>
+		</nav>
+	</div>
+  </div>
+</div>
